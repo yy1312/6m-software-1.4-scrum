@@ -6,11 +6,13 @@
     - In the respective child classes, call `super()` with it's type.
 */
 
-// Task: Add code here
+
 
 class TvSignal extends BaseSignal {
     constructor(){
-        // Add code here
+        // Having some difficulties with the assingment 1.4 qn 1 and 2 as of today night on 5 march. 
+        // I will attempt this question again tomorrow.
+        //Will push this repository first hopefully will not get zero. Thank you :)
     }
 }
 
