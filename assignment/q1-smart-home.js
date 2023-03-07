@@ -6,33 +6,44 @@
     - In the respective child classes, call `super()` with it's type.
 */
 
-
-
-class TvSignal extends BaseSignal {
-    constructor(){
-        // Having some difficulties with the assingment 1.4 qn 1 and 2 as of today night on 5 march. 
-        // I will attempt this question again tomorrow.
-        //Will push this repository first hopefully will not get zero. Thank you :)
+class BaseSignal {
+    constructor( type ){
+        if(this.constructor.type === "base"){
+            throw new Error("This class cannot be instantiated");
+        }
+        this.type = type;
     }
-}
-
-class AirconSignal extends BaseSignal {
-    constructor(){
-        // Add code here
+    
+    print() {
+        console.log(`Sending ${this.type} signal`);
     }
-}
-
-class DoorSignal extends BaseSignal {
-    constructor(){
-        // Add code here
+  }
+  
+  class TvSignal extends BaseSignal {
+  constructor(type){
+        super(type);
     }
-}
+  }
+  
+  class AirconSignal extends BaseSignal {
+  constructor(type){
+        super(type);
+    }
+  }
+  
+  class DoorSignal extends BaseSignal {
+  constructor(type){
+        super(type);
+    }
+  }
+  
+  const tv = new TvSignal('tv');
+  tv.print(); // prints "Sending tv signal"
+  
+  const door = new DoorSignal('door');
+  door.print(); // prints "Sending door signal"
+  
+  const aircon = new AirconSignal('aircon');
+  aircon.print(); // prints "Sending aircon signal"
 
-const tv = new TvSignal();
-tv.send(); // prints "Sending tv signal"
-
-const door = new DoorSignal();
-door.send(); // prints "Sending door signal"
-
-const aircon = new AirconSignal();
-aircon.send(); // prints "Sending aircon signal"
+  
